@@ -83,13 +83,13 @@
         }
 
         .signup-form h2 {
-            text-align: left;
+            text-align: center;
             margin-bottom: 20px;
         }
 
         .form-group {
             display: flex;
-            align-items: left;
+            align-items: center;
             margin-bottom: 15px;
         }
 
@@ -109,19 +109,19 @@
         }
 
         .form-group button {
-            margin-left: 5px;
-            padding: 2px 5px;
-            font-size: 0.7rem; 
+            margin-left: 10px;
+            padding: 1px 5px; /* 세로와 가로 여백 최소화 */
+            font-size: 0.7rem; /* 작고 간결한 글씨 크기 */
             font-weight: bold;
             background-color: #003580;
             color: white;
             border: none;
             border-radius: 3px;
             cursor: pointer;
-            width: 7px; 
+            width: auto; /* 내용에 맞는 크기 */
+            min-width: 40px; /* 최소 크기 조정 */
             transition: all 0.3s ease;
         }
-
 
         .form-group button:hover {
             background-color: #00264d;
