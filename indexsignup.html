@@ -96,30 +96,28 @@
         .form-group label {
             font-size: 0.9rem;
             font-weight: bold;
-            width: 25%;
-            text-align: right;
             margin-right: 10px;
+            white-space: nowrap; /* 텍스트 줄바꿈 방지 */
         }
 
         .form-group input {
-            width: 60%;
-            padding: 10px;
+            flex: 1; /* 입력란이 가로로 확장되도록 설정 */
+            padding: 8px;
             border: 1px solid #ddd;
             border-radius: 3px;
         }
 
         .form-group button {
             margin-left: 10px;
-            padding: 1px 5px; /* 세로와 가로 여백 최소화 */
-            font-size: 0.7rem; /* 작고 간결한 글씨 크기 */
+            padding: 2px 8px; /* 작고 컴팩트한 크기 */
+            font-size: 0.8rem;
             font-weight: bold;
             background-color: #003580;
             color: white;
             border: none;
             border-radius: 3px;
             cursor: pointer;
-            width: auto; /* 내용에 맞는 크기 */
-            min-width: 40px; /* 최소 크기 조정 */
+            width: auto;
             transition: all 0.3s ease;
         }
 
