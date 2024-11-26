@@ -80,6 +80,7 @@
             border-radius: 5px;
             background-color: #f9f9f9;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative; /* 회원가입 버튼 배치를 위한 설정 */
         }
 
         .signup-form h2 {
@@ -125,10 +126,13 @@
             background-color: #00264d;
         }
 
-        .signup-form button {
-            width: 10%;
-            padding: 6px;
-            font-size: 1rem;
+        /* 회원가입 버튼 */
+        .signup-btn {
+            position: absolute; /* 폼 내부 기준으로 위치 설정 */
+            bottom: -20px; /* 폼 아래쪽에 배치 */
+            right: 10px; /* 폼 오른쪽에 배치 */
+            padding: 5px 10px;
+            font-size: 0.8rem;
             font-weight: bold;
             background-color: #003580;
             color: white;
@@ -138,7 +142,7 @@
             transition: all 0.3s ease;
         }
 
-        .signup-form button:hover {
+        .signup-btn:hover {
             background-color: #00264d;
         }
     </style>
@@ -198,9 +202,8 @@
                 <input type="text" id="signup-phone-code" placeholder="인증번호를 입력하세요">
                 <button type="button">확인</button>
             </div>
-
-            <button type="submit">회원가입</button>
         </form>
+        <button class="signup-btn" type="submit">회원가입</button>
     </div>
 </body>
 </html>
