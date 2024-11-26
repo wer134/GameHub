@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
     <style>
-        /* 초기 스타일 */
+        /* 초기화: 브라우저 기본 스타일 제거 */
         * {
             margin: 0;
             padding: 0;
@@ -111,18 +111,17 @@
             border-radius: 3px;
         }
 
-        /* 확인 버튼 고정 크기 */
+        /* 확인 버튼 */
         .form-group button {
-            width: 30px; /* 버튼 너비 고정 */
-            height: 10px; /* 버튼 높이 고정 */
-            font-size: 0.8rem; /* 글자 크기 고정 */
+            width: 80px; /* 고정 크기 */
+            height: 35px; /* 고정 크기 */
+            font-size: 0.8rem;
             font-weight: bold;
             background-color: #003580;
             color: white;
             border: none;
             border-radius: 3px;
             cursor: pointer;
-            text-align: center;
             transition: background-color 0.3s ease;
         }
 
@@ -131,23 +130,20 @@
         }
 
         /* 회원가입 버튼 */
-        .signup-btn {
-            position: relative; /* 부모 요소와 독립적으로 위치 */
-            display: inline-block;
-            margin-top: 20px; /* 버튼을 더 아래로 이동 */
-            margin-left: auto; /* 오른쪽 정렬 */
-            padding: 5px 15px; /* 작고 컴팩트한 크기 */
-            font-size: 0.8rem;
+        .signup-form button {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
             font-weight: bold;
             background-color: #003580;
             color: white;
             border: none;
             border-radius: 3px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: background-color 0.3s ease;
         }
 
-        .signup-btn:hover {
+        .signup-form button:hover {
             background-color: #00264d;
         }
     </style>
@@ -177,6 +173,16 @@
             </div>
 
             <div class="form-group">
+                <label for="signup-pwd">비밀번호</label>
+                <input type="password" id="signup-pwd" placeholder="비밀번호를 입력하세요">
+            </div>
+
+            <div class="form-group">
+                <label for="signup-pwd-confirm">비밀번호 확인</label>
+                <input type="password" id="signup-pwd-confirm" placeholder="비밀번호를 다시 입력하세요">
+            </div>
+
+            <div class="form-group">
                 <label for="signup-email">이메일</label>
                 <input type="email" id="signup-email" placeholder="이메일을 입력하세요">
             </div>
@@ -197,10 +203,9 @@
                 <input type="text" id="signup-phone-code" placeholder="인증번호를 입력하세요">
                 <button type="button">확인</button>
             </div>
+
+            <button type="submit">회원가입</button>
         </form>
     </div>
-
-    <!-- 회원가입 버튼 -->
-    <button class="signup-btn" type="submit">회원가입</button>
 </body>
 </html>
