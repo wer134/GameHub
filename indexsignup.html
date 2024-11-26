@@ -6,6 +6,11 @@
     <title>회원가입</title>
     <style>
         /* 초기 스타일 */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             margin: 0;
             padding: 0;
@@ -90,6 +95,7 @@
         .form-group {
             display: flex;
             align-items: center;
+            justify-content: flex-start;
             margin-bottom: 15px;
         }
 
@@ -108,17 +114,19 @@
         }
 
         .form-group button {
-            margin-left: 10px;
-            padding: 2px 8px; /* 작고 컴팩트한 크기 */
-            font-size: 0.8rem;
+            display: inline-block; /* 버튼이 텍스트 크기에 맞게 */
+            margin: 0; /* 추가 간격 제거 */
+            padding: 2px 8px; /* 작고 일정한 크기 */
+            font-size: 0.8rem; /* 버튼 글자 크기 */
             font-weight: bold;
             background-color: #003580;
             color: white;
             border: none;
             border-radius: 3px;
             cursor: pointer;
-            width: auto;
             transition: all 0.3s ease;
+            width: auto; /* 텍스트 크기에 맞게 자동 조정 */
+            min-width: unset; /* 기본 최소 너비 제거 */
         }
 
         .form-group button:hover {
