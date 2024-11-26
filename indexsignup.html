@@ -6,11 +6,12 @@
     <title>회원가입</title>
     <style>
         /* 초기 스타일 */
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: Arial, sans-serif;
         }
@@ -93,7 +94,6 @@
         .form-group {
             display: flex;
             align-items: center;
-            justify-content: flex-start;
             margin-bottom: 15px;
         }
 
@@ -105,34 +105,39 @@
         }
 
         .form-group input {
-            flex: 1; /* 입력란이 가로로 확장되도록 설정 */
+            flex: 1;
             padding: 8px;
             border: 1px solid #ddd;
             border-radius: 3px;
         }
 
+        /* 확인 버튼 고정 크기 */
         .form-group button {
-            display: inline-block; /* 버튼이 텍스트 크기에 맞게 */
-            margin: 0; /* 추가 간격 제거 */
-            padding: 2px 8px; /* 작고 일정한 크기 */
-            font-size: 0.8rem; /* 버튼 글자 크기 */
+            width: 60px; /* 버튼 너비 고정 */
+            height: 30px; /* 버튼 높이 고정 */
+            font-size: 0.8rem; /* 글자 크기 고정 */
             font-weight: bold;
             background-color: #003580;
             color: white;
             border: none;
             border-radius: 3px;
             cursor: pointer;
-            width: auto; /* 텍스트 크기에 맞게 자동 조정 */
+            text-align: center;
             transition: background-color 0.3s ease;
         }
+
         .form-group button:hover {
             background-color: #00264d;
         }
 
-        .signup-form button {
-            width: 100%;
-            padding: 10px;
-            font-size: 1rem;
+        /* 회원가입 버튼 */
+        .signup-btn {
+            position: relative; /* 부모 요소와 독립적으로 위치 */
+            display: inline-block;
+            margin-top: 40px; /* 버튼을 더 아래로 이동 */
+            margin-left: auto; /* 오른쪽 정렬 */
+            padding: 5px 15px; /* 작고 컴팩트한 크기 */
+            font-size: 0.8rem;
             font-weight: bold;
             background-color: #003580;
             color: white;
@@ -142,7 +147,7 @@
             transition: all 0.3s ease;
         }
 
-        .signup-form button:hover {
+        .signup-btn:hover {
             background-color: #00264d;
         }
     </style>
@@ -168,17 +173,7 @@
             <div class="form-group">
                 <label for="signup-id">아이디</label>
                 <input type="text" id="signup-id" placeholder="아이디를 입력하세요">
-                <button type="button">중복확인</button>
-            </div>
-
-            <div class="form-group">
-                <label for="signup-pwd">비밀번호</label>
-                <input type="password" id="signup-pwd" placeholder="비밀번호를 입력하세요">
-            </div>
-
-            <div class="form-group">
-                <label for="signup-pwd-confirm">비밀번호 확인</label>
-                <input type="password" id="signup-pwd-confirm" placeholder="비밀번호를 다시 입력하세요">
+                <button type="button">확인</button>
             </div>
 
             <div class="form-group">
@@ -187,7 +182,7 @@
             </div>
 
             <div class="form-group">
-                <label for="signup-email-code">이메일 확인 코드</label>
+                <label for="signup-email-code">이메일 코드</label>
                 <input type="text" id="signup-email-code" placeholder="이메일로 받은 코드를 입력하세요">
                 <button type="button">확인</button>
             </div>
@@ -202,9 +197,10 @@
                 <input type="text" id="signup-phone-code" placeholder="인증번호를 입력하세요">
                 <button type="button">확인</button>
             </div>
-
-            <button type="submit">회원가입</button>
         </form>
     </div>
+
+    <!-- 회원가입 버튼 -->
+    <button class="signup-btn" type="submit">회원가입</button>
 </body>
 </html>
