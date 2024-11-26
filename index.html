@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Layout</title>
+    <style>
+        /* 초기 스타일 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* 상단 헤더 */
+        header {
+            width: 100%;
+            height: 10vh; /* 세로 길이의 1/10 */
+            background-color: #003580;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
+
+        /* 카테고리 메뉴바 */
+        nav {
+            width: 100%;
+            height: 6vh; /* 세로 길이의 1/5 */
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: space-around; /* 버튼 간격 균등 배치 */
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* 메뉴 항목 스타일 */
+        nav a {
+            text-decoration: none; /* 밑줄 제거 */
+            color: #003580;
+            font-size: 1.5rem; /* 글자 크기 */
+            font-weight: bold;
+            padding: 10px 20px;
+            transition: all 0.3s ease; /* 호버 애니메이션 */
+        }
+
+        nav a:hover {
+            background-color: #003580;
+            color: white;
+            border-radius: 5px; /* 버튼 모서리 둥글게 */
+        }
+
+        /* 로그인 창 스타일 */
+        .login-box {
+            position: absolute;
+            left: 2%; /* 좌측에서 2% 떨어진 위치 */
+            top: calc(10vh + 6vh + 2%); /* 헤더와 메뉴바 아래에서 약간의 여백 */
+            width: 12%;
+            height: auto;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 로그인 필드 스타일 */
+        .login-box label {
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-right: 5px;
+            display: inline-block;
+            width: 20%;
+        }
+
+        .login-box input {
+            width: 70%;
+            padding: 5px;
+            margin-bottom: 5px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        /* 추가 링크 스타일 */
+        .login-box .links {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center; /* 링크를 중앙 정렬 */
+            gap: 15px; /* 링크 간 간격 */
+        }
+
+        .login-box .links a {
+            text-decoration: none;
+            font-size: 0.8rem;
+            color: #003580;
+        }
+
+        .login-box .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="test.html">Site Name</a>
+    </header>
+    <nav>
+        <a href="#1">1</a>
+        <a href="#2">2</a>
+        <a href="#3">3</a>
+        <a href="#4">4</a>
+        <a href="#5">5</a>
+    </nav>
+
+    <!-- 로그인 창 -->
+    <div class="login-box">
+        <div>
+            <label for="login-id">ID:</label>
+            <input type="text" id="login-id" placeholder="아이디 입력">
+        </div>
+        <div>
+            <label for="login-pwd">PWD:</label>
+            <input type="password" id="login-pwd" placeholder="비밀번호 입력">
+        </div>
+        <div class="links">
+            <a href="#signup">회원가입</a>
+            <a href="#find-password">비밀번호 찾기</a>
+        </div>
+    </div>
+</body>
+</html>
