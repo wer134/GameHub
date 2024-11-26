@@ -76,39 +76,33 @@
         }
 
         /* 드롭다운 메뉴 */
-        nav ul li ul {
-            display: none; /* 기본적으로 숨김 */
+        .dropdown {
+            display: none;
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: #ffffff;
+            background-color: #fff;
             border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             z-index: 1000;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            width: 150px;
         }
 
-        nav ul li ul li {
-            text-align: left;
-        }
-
-        nav ul li ul li a {
-            padding: 10px 15px;
+        .dropdown a {
             color: #003580;
-            font-size: 1rem;
-            font-weight: normal;
+            padding: 10px 20px;
             display: block;
+            text-decoration: none;
         }
 
-        nav ul li ul li a:hover {
+        .dropdown a:hover {
             background-color: #003580;
             color: white;
         }
 
-        nav ul li:hover ul {
-            display: block; /* 부모에 마우스오버 시 드롭다운 표시 */
+        /* 드롭다운 메뉴 표시 */
+        nav > ul > li:hover .dropdown {
+            display: block;
         }
 
         /* 회원가입 폼 스타일 */
