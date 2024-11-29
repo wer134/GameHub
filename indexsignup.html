@@ -301,43 +301,20 @@
 </div>
 
 <script>
-    document.getElementById('signupForm').addEventListener('submit', async (event) => {
-        event.preventDefault();
-
-        const name = document.getElementById('name').value;
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-
-        try {
-            const response = await fetch('http://localhost:3001/register', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name, username, password, email, phone }),
-            });
-
-            const result = await response.text();
-            alert(result);
-        } catch (error) {
-            console.error('회원가입 실패:', error);
-            alert('회원가입 중 오류가 발생했습니다.');
-        }
-    });
-
-    document.getElementById('checkButton').addEventListener('click', async () => {
+    document.querySelector('.form-group button').addEventListener('click', async () => {
         const username = document.getElementById('username').value;
 
         try {
             const response = await fetch(`http://localhost:3001/check-username?username=${encodeURIComponent(username)}`);
             const result = await response.text();
-            alert(result);
+            alert(result); // 서버 응답 메시지 표시
         } catch (error) {
             console.error('중복 확인 실패:', error);
             alert('중복 확인 중 오류가 발생했습니다.');
         }
     });
 </script>
+
 
 
 </body>
