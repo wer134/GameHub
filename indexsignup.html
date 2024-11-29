@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,11 +56,11 @@
             width: 100%;
         }
 
-        nav > ul > li {
+        nav>ul>li {
             position: relative;
         }
 
-        nav > ul > li a {
+        nav>ul>li a {
             text-decoration: none;
             color: #003580;
             font-size: 1.5rem;
@@ -70,7 +71,7 @@
             transition: all 0.3s ease;
         }
 
-        nav > ul > li a:hover {
+        nav>ul>li a:hover {
             background-color: #003580;
             color: white;
             border-radius: 5px;
@@ -102,7 +103,7 @@
         }
 
         /* 드롭다운 메뉴 표시 */
-        nav > ul > li:hover .dropdown {
+        nav>ul>li:hover .dropdown {
             display: block;
         }
 
@@ -132,7 +133,8 @@
             font-size: 0.9rem;
             font-weight: bold;
             margin-right: 10px;
-            white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+            white-space: nowrap;
+            /* 텍스트 줄바꿈 방지 */
         }
 
         .form-group input {
@@ -179,6 +181,7 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <a href="index.html">Site Name</a>
@@ -231,47 +234,101 @@
     <!-- 회원가입 폼 -->
     <div class="signup-form">
         <h2>회원가입</h2>
-        <form>
+        <form action="/register" method="POST">
+            <div class="form-group">
+                <label for="signup-name">이름</label>
+                <input type="text" id="signup-name" name="name" placeholder="이름을 입력하세요" required>
+            </div>
+
             <div class="form-group">
                 <label for="signup-id">아이디</label>
-                <input type="text" id="signup-id" placeholder="아이디를 입력하세요">
-                <button type="button">중복확인</button>
+                <input type="text" id="signup-id" name="username" placeholder="아이디를 입력하세요" required>
+                <button type="button">확인</button>
             </div>
 
             <div class="form-group">
                 <label for="signup-pwd">비밀번호</label>
-                <input type="password" id="signup-pwd" placeholder="비밀번호를 입력하세요">
-            </div>
-
-            <div class="form-group">
-                <label for="signup-pwd-confirm">비밀번호 확인</label>
-                <input type="password" id="signup-pwd-confirm" placeholder="비밀번호를 다시 입력하세요">
+                <input type="password" id="signup-pwd" name="password" placeholder="비밀번호를 입력하세요" required>
             </div>
 
             <div class="form-group">
                 <label for="signup-email">이메일</label>
-                <input type="email" id="signup-email" placeholder="이메일을 입력하세요">
-            </div>
-
-            <div class="form-group">
-                <label for="signup-email-code">이메일 코드</label>
-                <input type="text" id="signup-email-code" placeholder="이메일로 받은 코드를 입력하세요">
-                <button type="button">확인</button>
+                <input type="email" id="signup-email" name="email" placeholder="이메일을 입력하세요" required>
             </div>
 
             <div class="form-group">
                 <label for="signup-phone">휴대폰 번호</label>
-                <input type="tel" id="signup-phone" placeholder="휴대폰 번호를 입력하세요">
-            </div>
-
-            <div class="form-group">
-                <label for="signup-phone-code">인증번호</label>
-                <input type="text" id="signup-phone-code" placeholder="인증번호를 입력하세요">
-                <button type="button">확인</button>
+                <input type="tel" id="signup-phone" name="phone" placeholder="휴대폰 번호를 입력하세요" required>
             </div>
 
             <button type="submit">회원가입</button>
         </form>
+        
+
     </div>
+    <!-- 회원가입 폼 -->
+<div class="signup-form">
+    <h2>회원가입</h2>
+    <form id="signupForm">
+        <div class="form-group">
+            <label for="signup-name">이름</label>
+            <input type="text" id="name" name="name" placeholder="이름을 입력하세요" required>
+        </div>
+
+        <div class="form-group">
+            <label for="signup-id">아이디</label>
+            <input type="text" id="username" name="username" placeholder="아이디를 입력하세요" required>
+            <button type="button">확인</button>
+        </div>
+
+        <div class="form-group">
+            <label for="signup-pwd">비밀번호</label>
+            <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요" required>
+        </div>
+
+        <div class="form-group">
+            <label for="signup-email">이메일</label>
+            <input type="email" id="email" name="email" placeholder="이메일을 입력하세요" required>
+        </div>
+
+        <div class="form-group">
+            <label for="signup-phone">휴대폰 번호</label>
+            <input type="tel" id="phone" name="phone" placeholder="휴대폰 번호를 입력하세요" required>
+        </div>
+
+        <button type="submit">회원가입</button>
+    </form>
+</div>
+
+<!-- 자바스크립트 -->
+<script>
+    document.getElementById('signupForm').addEventListener('submit', async (event) => {
+        event.preventDefault(); // 기본 동작 막기
+
+        // 입력값 가져오기
+        const name = document.getElementById('name').value;
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+
+        try {
+            // 서버로 데이터 전송
+            const response = await fetch('http://localhost:3001/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, username, password, email, phone }),
+            });
+
+            const result = await response.text(); // 서버 응답 처리
+            alert(result); // 서버 응답 메시지 표시
+        } catch (error) {
+            console.error('회원가입 실패:', error);
+            alert('회원가입 중 오류가 발생했습니다.');
+        }
+    });
+</script>
+
 </body>
+
 </html>
