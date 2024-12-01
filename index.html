@@ -30,6 +30,11 @@
             font-weight: bold;
         }
 
+        .logo a {
+            text-decoration: none;
+            color: white;
+        }
+
         .header-right {
             display: flex;
             align-items: center;
@@ -96,14 +101,10 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             z-index: 10;
             width: auto;
-            /* 글자 길이에 맞게 조정 */
             min-width: 150px;
-            /* 최소 너비 설정 */
             white-space: nowrap;
-            /* 글자 줄바꿈 방지 */
             border-radius: 5px;
         }
-
 
         .dropdown a {
             display: block;
@@ -151,6 +152,22 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+        }
+
+        .links {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+        }
+
+        .links a {
+            color: #0055aa;
+            text-decoration: none;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
         }
 
         /* 메인 배너 */
@@ -215,7 +232,9 @@
 
 <body>
     <header>
-        <div class="logo">CHOI</div>
+        <div class="logo">
+            <a href="index.html">CHOI</a>
+        </div>
         <div class="header-right">
             <input type="text" placeholder="검색어를 입력하세요">
             <button>검색</button>
@@ -270,6 +289,10 @@
             <input type="text" placeholder="아이디">
             <input type="password" placeholder="비밀번호">
             <button>로그인</button>
+            <div class="links">
+                <a href="#">회원가입</a>
+                <a href="#">비밀번호 찾기</a>
+            </div>
         </div>
 
         <div class="main">
