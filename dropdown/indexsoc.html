@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>축구</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #003580;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .board-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #003580;
+        }
+
+        .write-button {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background-color: #003580;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .write-button:hover {
+            background-color: #0055aa;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #003580;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f4f4f4;
+        }
+
+        .pagination {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .pagination a {
+            text-decoration: none;
+            color: #003580;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+
+        .pagination a:hover {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">CHOI</a>
+        </div>
+        <a href="index.html" style="color: white; text-decoration: none;">홈으로</a>
+    </header>
+
+    <div class="container">
+        <div class="board-title">게시판 이름</div>
+        <a href="write.html" class="write-button">글쓰기</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>작성일</th>
+                    <th>조회수</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><a href="post1.html">게시물 제목 1</a></td>
+                    <td>관리자</td>
+                    <td>2024-12-01</td>
+                    <td>123</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><a href="post2.html">게시물 제목 2</a></td>
+                    <td>사용자1</td>
+                    <td>2024-12-01</td>
+                    <td>85</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><a href="post3.html">게시물 제목 3</a></td>
+                    <td>사용자2</td>
+                    <td>2024-11-30</td>
+                    <td>57</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pagination">
+            <a href="#">&laquo; 이전</a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">다음 &raquo;</a>
+        </div>
+    </div>
+</body>
+
+</html>
