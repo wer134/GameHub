@@ -29,9 +29,22 @@
             font-weight: bold;
         }
 
+        header .title {
+            margin: 0;
+        }
+
         header a {
             text-decoration: none;
             color: white;
+            font-size: 1rem;
+            padding: 8px 15px;
+            background-color: #0055aa;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        header a:hover {
+            background-color: #0073e6;
         }
 
         /* 카테고리 메뉴바 */
@@ -194,7 +207,7 @@
 
 <body>
     <header>
-        <a href="#">My Website</a>
+        <div class="title">My Website</div>
         <a href="#">로그인</a>
     </header>
 
@@ -225,7 +238,7 @@
             <button type="button">로그인</button>
         </form>
         <div class="github-button-container">
-            <a href="https://github.com/wer134/GameHub" class="github-button">GitHub</a>
+            <a href="https://github.com/wer134/GameHub" class="github-button" target="_blank">GitHub</a>
         </div>
     </div>
 
