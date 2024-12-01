@@ -126,6 +126,31 @@
             width: 20%;
         }
 
+        /* 로그인 버튼 스타일 */
+        .login-button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            /* 위 입력 필드와 간격 */
+        }
+
+        #login-button {
+            padding: 8px 20px;
+            background-color: #003580;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #login-button:hover {
+            background-color: #0055aa;
+            transform: scale(1.05);
+        }
+
         .login-box input {
             width: 70%;
             padding: 5px;
@@ -240,6 +265,9 @@
         <div>
             <label for="login-pwd">PWD:</label>
             <input type="password" id="login-pwd" placeholder="비밀번호 입력">
+        </div>
+        <div class="login-button-container">
+            <button id="login-button">로그인</button>
         </div>
         <div class="links">
             <a href="./indexsignup.html">회원가입</a>
